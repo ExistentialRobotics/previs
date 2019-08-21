@@ -89,7 +89,7 @@ func startContainer(ctx context.Context, cli *client.Client, imgDocker string, p
 			Binds: []string{"/var/run/docker.sock:/var/run/docker.sock"},
 		}
 	}
-	containerName := randSeq(10)
+	containerName := randSeq(10) + "-previs"
 	respContainerCreater, err := cli.ContainerCreate(ctx, &container.Config{
 		Image: "previs",
 		Tty:   true,
